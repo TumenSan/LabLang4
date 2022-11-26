@@ -12,3 +12,5 @@
 For start:
 1) rustc main.rs
 2) ./main
+
+Программа читает файл text.txt, изменяйте значения в нём.
