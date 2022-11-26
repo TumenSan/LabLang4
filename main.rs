@@ -114,13 +114,13 @@ fn main() {
         (line1.a, line1.b, line1.c) = abcAnswer(ln[0], ln[1], ln[2], ln[3]);
         (line2.a, line2.b, line2.c) = abcAnswer(ln[4 + i * 4], ln[5 + i * 4], ln[6 + i * 4], ln[7 + i * 4]);
         let mut answer = intersect(line1, line2, pt1);
-        let mut xq = answer.0;
-        let mut xw = answer.1;
-        let mut bool1;
-        bool1 = answer.2;
-        //println!("{} {} {}", xq, xw, bool1);
+        //println!("{} {} {}", answer.0, answer.1, answer.2);
 
-        if (answer.0 >= ln[4 + i * 4] && answer.0 <= ln[6 + i * 4] && answer.1 >= ln[5 + i * 4] && answer.1 <= ln[7 + i * 4] && answer.2) { //otrezok and lines
+        if (answer.2 && 
+        (((answer.0 >= ln[4 + i * 4] && answer.0 <= ln[6 + i * 4]) || 
+        (answer.0 <= ln[4 + i * 4] && answer.0 >= ln[6 + i * 4])) && 
+        ((answer.1 >= ln[5 + i * 4] && answer.1 <= ln[7 + i * 4]) || 
+        (answer.1 <= ln[5 + i * 4] && answer.1 >= ln[7 + i * 4])))) { //otrezok and lines
             //println!("otrezok ok {}", 1);
             if ((answer.0 > ln[0]) == (ln[2] > ln[0]) && (answer.1 > ln[1]) == (ln[3] > ln[1])) { //Luch
                 //println!("luch ok {}", 1);
